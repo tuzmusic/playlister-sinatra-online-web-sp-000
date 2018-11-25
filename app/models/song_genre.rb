@@ -1,4 +1,4 @@
-class Song_Genre < ActiveRecord::Base
-  has_many :songs
-  has_many :genres
+class SongGenre < ActiveRecord::Base
+  belongs_to :songs
+  belongs_to :genres
 end
