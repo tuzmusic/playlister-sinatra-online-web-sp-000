@@ -5,10 +5,8 @@
 <h2><%= @song.name %></h2>
 <p>Artist: 
 <% if !!@song.artist %>
-<%# binding.pry %>
 <a href="/artists/<%= @song.artist.slug %>"><%= @song.artist.name %></a>
 <% else %>
-<%# binding.pry %>
 <%= "none" %>
 <% end %>
 </p>
