@@ -35,4 +35,14 @@ class SongsController < ApplicationController
     erb :'songs/show'
   end 
 
+  # Edit action
+
+  patch '/songs/:slug' do
+    @song = Song.find_by_slug(params[:slug])
+    @genres = Genre.all
+    erb :'songs/edit'
+
+    redirect "/songs/#{song.slug}" 
+  end
+
 end
