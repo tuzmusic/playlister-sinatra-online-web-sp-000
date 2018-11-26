@@ -19,9 +19,11 @@ class SongsController < ApplicationController
 
   post '/songs' do
     song = Song.create(params[:song])
-    if artist = Artist.find_by_slug(params[:artist][:name]).first
+    if artist = Artist.find_by_slug(params[:artist][:name])
+      binding.pry
       song.artist = artist
     else 
+      binding.pry
       song.artist = Artist.create(name:params[:artist][:name])
     end 
     song.save

@@ -11,6 +11,7 @@ module Slugifiable
       self.all.each do |item|
         return item if item.slug == slug
       end
+      return nil
     end
   end
 end
