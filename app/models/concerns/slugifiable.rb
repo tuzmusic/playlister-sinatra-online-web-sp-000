@@ -8,7 +8,9 @@ module Slugifiable
 
   module ClassMethods
     def find_by_slug(slug)
-      binding.pry
+      self.all.each do |item|
+        return item if item.slug == slug
+      end
     end
   end
 end
