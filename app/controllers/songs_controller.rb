@@ -43,8 +43,6 @@ class SongsController < ApplicationController
   patch '/songs/:slug' do
     song = Song.find_by_slug(params[:slug])
     artist_name = params[:artist][:name]
-
-    
     song.update(params[:song])
     song.artist = Artist.find_by_slug(artist_name) || Artist.create(name: artist_name)
     song.save
