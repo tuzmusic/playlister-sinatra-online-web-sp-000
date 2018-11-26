@@ -1,13 +1,13 @@
-<h2>New Song</h2>
+<h2>Edit Song</h2>
 
-<form action="/songs/<%= song.slug %>" method="POST">
+<form action="/songs/<%= @song.slug %>" method="POST">
   <input type="hidden" id="hidden" name="_method" value="patch">
-
   <p><label for="song[name]">Song Name: </label>
-    <input type="text" id="Name" name="song[name]" placeholder="<%= song.name %>"/>
+    <input type="text" id="Name" name="song[name]" value="<%= @song.name %>"/>
   </p>
+
   <p><label for="artist[name]">Artist Name: </label>
-    <input type="text" id="Artist Name" name="artist[name]" placeholder="<%= artist.name %>"/>
+    <input type="text" id="Artist Name" name="artist[name]" value="<%= @song.artist.name %>"/>
   </p>
 
   <!-- genre checkboxes -->
@@ -20,7 +20,7 @@
     <% end %>
   </p>
 
-  <p><input type="submit" value="Create"></p>
+  <p><input type="submit" value="Save"></p>
 
 </form>
 
